@@ -20,42 +20,41 @@
         android:layout_height="wrap_content">
 
 
-        <LinearLayout
-            android:id="@+id/linear_layout"
+        <TextView
+            android:id="@+id/title_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/representativePhoto"
-            app:layout_constraintEnd_toStartOf="@+id/wwwIcon"
             app:layout_constraintTop_toTopOf="parent"
-            android:orientation="vertical">
+            android:layout_marginStart="12dp"
+            android:textAppearance="?textAppearanceHeadline5"
+            android:text="@{representative.official.name}"
+            tools:text="Title"/>
 
-            <TextView
-                android:id="@+id/title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?textAppearanceHeadline5"
-                android:text="@{representative.official.name}"
-                tools:text="Title"/>
+        <TextView
+            android:id="@+id/desc_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:text="@{representative.office.name}"
+            app:layout_constraintEnd_toStartOf="@+id/wwwIcon"
+            app:layout_constraintStart_toStartOf="@+id/title_text"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            tools:text="Description"/>
 
-            <TextView
-                android:id="@+id/desc_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?textAppearanceHeadline6"
-                android:text="@{representative.office.name}"
-                tools:text="Description"/>
-
-            <TextView
-                android:id="@+id/party_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?textAppearanceHeadline6"
-                android:text="@{representative.official.party}"
-                tools:text="Party"/>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/party_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?textAppearanceHeadline6"
+            android:text="@{representative.official.party}"
+            app:layout_constraintEnd_toStartOf="@+id/wwwIcon"
+            app:layout_constraintStart_toStartOf="@+id/title_text"
+            app:layout_constraintTop_toBottomOf="@+id/desc_text"
+            tools:text="Party"/>
 
         <ImageView
             android:id="@+id/representativePhoto"
@@ -74,7 +73,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerCrop"
-            android:padding="4dp"
+            android:padding="@dimen/default_padding_small"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +85,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerCrop"
-            android:padding="4dp"
+            android:padding="@dimen/default_padding_small"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/facebookIcon"
@@ -99,7 +98,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:scaleType="centerCrop"
-            android:padding="4dp"
+            android:padding="@dimen/default_padding_small"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/twitterIcon"
